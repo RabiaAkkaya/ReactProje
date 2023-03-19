@@ -11,7 +11,7 @@ function Basvuru() {
             <div class="row">
 
                 <div class="col-1"></div>
-                <div class="col-10  shadow-lg p-3 mb-2 bg-white rounded mt-2 p-5" style={{height:"950px"}}>
+                <div class="col-10  shadow-lg p-3 mb-2 bg-white rounded mt-2 p-5" style={{height:"950px",width:"950px"}}>
                 <div class="row mx-auto mb-4">
                     
                         

@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from "../Image/images.png";
+import { kayit } from '../Functions';
 function Kayit() {
     return (
 
@@ -28,7 +29,7 @@ function Kayit() {
                             <br></br>
                             <div class="row text-center mb-4">
                                 <div class="col-12">
-                                    <button type="button" class="btn btn-info" onclick="kayit()">Kayıt Ol</button><br></br>
+                                    <button type="button" class="btn btn-info" onClick={()=>kayit()}>Kayıt Ol</button><br></br>
                                     <p id="sonuc"></p>
                                     <a href="login.html"><button type="button" class="btn btn-link">Giriş</button></a>
 

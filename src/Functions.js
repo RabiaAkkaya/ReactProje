@@ -7,6 +7,7 @@ import Kayit from "./Sayfalar/Kayit";
 import Hakkinda from "./Sayfalar/Hakkinda";
 import Basvuru2 from "./Sayfalar/Basvuru2";
 import Basvuru3 from "./Sayfalar/Basvuru3";
+import Onizleme from "./Sayfalar/Onizleme";
 
 
 export function goster(eleman)
@@ -48,7 +49,7 @@ else if(eleman=="Erasmus Hakkında")
     )
 
 }
-else if(eleman=="Başvuru3")
+else if(eleman=="Basvuru3")
 {
     ansyf_govde.render(
         <Basvuru3/>
@@ -62,4 +63,38 @@ else if(eleman=="Basvuru2")
     )
 
 }
+else if(eleman=="Onizleme")
+{
+    ansyf_govde.render(
+        <Onizleme/>
+    )
+
+}
+else if(eleman=="kayit")
+{
+    ansyf_govde.render(
+        <Kayit/>
+    )
+
+}
+}
+export function kayit() {
+
+   var kullanici =
+        [(document.getElementById("email").value), (document.getElementById("password").value)];
+
+    var sifre2 = document.getElementById('password2').value;
+    var sifre = document.getElementById('password').value;
+    if (sifre == sifre2) {
+        sessionStorage.setItem("user", kullanici);
+        document.getElementById("sonuc").style.color = "green";
+        document.getElementById("sonuc").innerHTML = "Kayıt Başarılı";
+       
+
+    }
+    else {
+        document.getElementById("sonuc").style.color = "red";
+        document.getElementById("sonuc").innerHTML = "Lütfen Kayıt Bilgilerini Kontrol Ediniz!";
+        this.refresh();
+    }
 }
