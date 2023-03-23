@@ -25,7 +25,7 @@ root.render(
       <div className='col-3' id="sidebar">      
       </div>
   
-      <div className="col-8" id='portalicerik'><Basvuru2/></div>
+      <div className="col-8" id='portalicerik'></div>
 
       
       <div className='col-1'></div>

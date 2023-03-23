@@ -7,7 +7,7 @@ import TrinityCollage from "../Image/TrinityCollage.jpg"
 
 
 import { Carousel } from 'react-bootstrap';
-
+sessionStorage.setItem("isLogin","false");
 const Home = () => {
   return (
     <div style={{ backgroundColor: "#f8f4ff" }}>

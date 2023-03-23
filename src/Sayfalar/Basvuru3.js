@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import buttonleft from "../Image/next-left.png";
-import { goster } from '../Functions';
+import { goster,basvuru3 } from '../Functions';
 import buttonright from "../Image/next-right.png";
 function Basvuru3() {
     return (
@@ -28,7 +28,7 @@ function Basvuru3() {
                           <div class="col-1"></div>
                           <div class="col-3"style={{width:"100px",height:"100px", backgroundImage:`url(${buttonleft})`}} onClick={()=>goster("Basvuru2")}></div>
                           <div class="col-4"></div>                            
-                          <div class="col-3" style={{width:"100px",height:"100px", backgroundImage:`url(${buttonright})`}} onClick={()=>goster("Onizleme")}></div>
+                          <div class="col-3" style={{width:"100px",height:"100px", backgroundImage:`url(${buttonright})`}} onClick={()=>basvuru3()}></div>
                           </div>
                       </div>
 

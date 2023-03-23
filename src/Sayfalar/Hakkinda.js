@@ -20,7 +20,7 @@ function Hakkinda()
         </p>
 
         
-     <div class="row d-flex justify-content-center mt-5"> <button class="btn btn-dark " style={{width:"50%"}} onClick={()=>goster("Erasmus Başvuru")}>Başvuru Yap</button> </div>
+     <div class="row d-flex justify-content-center mt-5"> <button class="btn btn-dark " style={{width:"50%"}} onClick={()=>goster("Başvuru Yap")}>Başvuru Yap</button> </div>
   
     </div>
 
