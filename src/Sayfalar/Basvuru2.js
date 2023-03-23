@@ -2,11 +2,11 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import buttonleft from "../Image/next-left.png";
 import buttonright from "../Image/next-right.png";
-import { goster } from '../Functions';
+import { goster,basvuru2 } from '../Functions';
 
 function Basvuru2() {
     return (
-        <div class="row mt-2">
+        <div class="row mt-1" >
             <div class="col-1"></div>
             <div class="col-10  shadow-lg p-3 mb-1 bg-white rounded p-2" style={{ height: "950px",width:"950px" }}>
 
@@ -33,7 +33,7 @@ function Basvuru2() {
                             </div>
                         </div>
 
-                        <div class="row mb-4 ">
+                        <div class="row mb-2 ">
                             <div class="col-12 ">
                                 <select class="form-select form-select-sm-1 py-2 mb-1" aria-label=".form-select-sm example" id="sinif1">
                                     <option selected="">Lütfen Sınıf Bilgisi girin</option>
@@ -60,20 +60,21 @@ function Basvuru2() {
 
 
                             </div>
-                            <div class="row mt-4 ">
+                            <div class="row mt-2 ">
                                 <div class="col-4"></div>
                                 <div class="col-8">
-                                    <button type="button" class="btn btn-dark" onclick="TipKontrol()">Dosyaları Yükle</button>
-                                    <p style={{ alignSelf: "center;" }} id="YukleUyari"></p>
+                                <div class="col-12"><p id="uyari" style={{ color: "red" }}></p></div>
+                                    <button type="button" class="btn btn-dark mx-4" onclick="TipKontrol()">Dosyaları Yükle</button>
+                                    
                                 </div>
 
                             </div>
 
-                            <div class="row mt-4 mb-2 ">
+                            <div class="row mt-2 mb-2 ">
                                 <div class="col-2"></div>
-                                <div class="col-2" style={{ width: "100px", height: "100px", backgroundImage: `url(${buttonleft})` }} onClick={() => goster("Erasmus Başvuru")}></div>
+                                <div class="col-2" style={{ width: "100px", height: "100px", backgroundImage: `url(${buttonleft})` }} onClick={() => goster("Başvuru Yap")}></div>
                                 <div class="col-4"></div>
-                                <div class="col-3" style={{ width: "100px", height: "100px", backgroundImage: `url(${buttonright})` }} onClick={() => goster("Basvuru3")}></div>
+                                <div class="col-3" style={{ width: "100px", height: "100px", backgroundImage: `url(${buttonright})` }} onClick={() =>basvuru2()}></div>
                             </div>
                         </div>
 

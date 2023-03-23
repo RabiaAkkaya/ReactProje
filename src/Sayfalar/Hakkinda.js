@@ -1,10 +1,11 @@
+import { goster } from "../Functions";
 function Hakkinda()
 {
     return(
-        <div class="row shadow-lg mt-1 mb-1 bg-white rounded ">
+        <div class="row shadow-lg m-1 bg-white rounded ">
 <div class="col-2"></div>
 <div class="col-8 mt-5">  
-    <div style={{height:"950px",fontSize:"20px"}} >
+    <div style={{height:"800px",fontSize:"17px"}} >
         <h3>Erasmus nedir?</h3>
         <p>Avrupa Birliği Erasmus programı, öğrencilere bir dizi eğitim ve öğretim avantajı sunmaktadır. Erasmus, farklı Avrupa üniversiteleri arasında bir öğrenci değişiminden oluşur, bu değişim dört aylık, altı aylık veya yıllık olabilir.</p>
         <h3>Erasmus+ | Erasmus Plus</h3>
@@ -19,7 +20,7 @@ function Hakkinda()
         </p>
 
         
-     <div class="row d-flex justify-content-center mt-5"> <button class="btn btn-dark " style={{width:"50%"}}>Başvuru Yap</button> </div>
+     <div class="row d-flex justify-content-center mt-5"> <button class="btn btn-dark " style={{width:"50%"}} onClick={()=>goster("Erasmus Başvuru")}>Başvuru Yap</button> </div>
   
     </div>
 

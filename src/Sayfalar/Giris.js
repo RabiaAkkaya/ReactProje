@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from "../Image/images.png";
+import { giris } from '../Functions';
 function Giris() {
     return (
 
@@ -25,7 +26,7 @@ function Giris() {
 
                         <div class="row mb-4">
                             <div class="col-12">
-                                <button type="button" class="btn btn-info" onclick="girids()">Giriş</button><br></br>
+                                <button type="button" class="btn btn-info" onClick={()=>giris()}>Giriş</button><br></br>
                                 <p id="sonuc"></p>
                                 <button type="button" class="btn btn-link">Şifremi Unuttum</button><br></br>
                                 <button type="button" class="btn btn-link">Kayıt Ol</button>
