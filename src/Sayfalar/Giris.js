@@ -28,7 +28,7 @@ function Giris() {
                             <div class="col-12">
                                 <button type="button" class="btn btn-info" onClick={()=>giris()}>Giriş</button><br></br>
                                 <p id="sonuc"></p>
-                                <button type="button" class="btn btn-link">Şifremi Değiştir</button><br></br>
+                                <button type="button" class="btn btn-link">Şifre Değiştir</button><br></br>
                                 <button type="button" class="btn btn-link">Kayıt Ol</button>
 
                             </div>

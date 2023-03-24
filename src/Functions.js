@@ -15,11 +15,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
+const icerik = ReactDOM.createRoot(document.getElementById('icerik'));
+const portalicerik = ReactDOM.createRoot(document.getElementById('portalicerik'));
+const sidebar = ReactDOM.createRoot(document.getElementById('sidebar'));
+const header = ReactDOM.createRoot(document.getElementById('header'));
+
+
 export function goster(eleman) {
-    const icerik = ReactDOM.createRoot(document.getElementById('icerik'));
-    const portalicerik = ReactDOM.createRoot(document.getElementById('portalicerik'));
-    const sidebar = ReactDOM.createRoot(document.getElementById('sidebar'));
-    const header = ReactDOM.createRoot(document.getElementById('header'));
 
     if (eleman == "Erasmus Başvuru") {
         document.getElementById("header").style.display = "none";
@@ -219,10 +221,6 @@ export function kayit() {
 }
 export function giris() {
 
-    const anasayfa = ReactDOM.createRoot(document.getElementById('icerik'));
-
-
-    const icerik = ReactDOM.createRoot(document.getElementById('portalicerik'));
     var kullanici = sessionStorage.getItem("user");
 
     if (kullanici == null) {
@@ -251,7 +249,7 @@ export function giris() {
 
         sessionStorage.setItem("isLogin", isLogin);
 
-        anasayfa.render(
+        icerik.render(
             <Home />
         )
 
@@ -286,9 +284,6 @@ export function cikis() {
 
 export function basvuru1() {
 
-    const portalicerik = ReactDOM.createRoot(document.getElementById('portalicerik'));
-
-    const icerik = ReactDOM.createRoot(document.getElementById('icerik'));
     var engelBilgisi1;
     var isim = document.getElementById("Ad").value;
     var soyisim = document.getElementById("SoyAd").value;
@@ -394,5 +389,17 @@ export function basvuru3() {
     }
     else {
         document.getElementById("uyari").innerHTML = "Lütfen tüm alanları doldurunuz!";
+    }
+    
+}
+export function sifreDegistir()
+{ 
+    var isLogin=sessionStorage.getItem("isLogin");
+    if(isLogin=="true")
+    {
+    
+    }
+    else{
+        alert("Lütfen ilk önce giriş yapınız!")
     }
 }
