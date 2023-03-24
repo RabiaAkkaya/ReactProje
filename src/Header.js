@@ -6,6 +6,7 @@ import { Anasyf_menu } from './Sayfalar/diziler';
 
 function Header(props)
 {
+  sessionStorage.setItem("isLogin","false");
     return(
         <>
         <div className="row"style={{backgroundColor:"#f0f8ff"}}>
@@ -20,12 +21,13 @@ function Header(props)
 ))}
  <li><a href="#" className="nav-link px-3 link-secondary"id="erasmusBasvuru"onClick={()=>goster("Erasmus Başvuru")} style={{display:"none"}}>Erasmus Başvuru</a></li>
 </ul>
-<p id="header_karsilama"></p>
-<div className="col-md-3 " id="btn_div">
+
+<div className="col-md-3 text-end " id="btn_div">
   <button type="button" className="btn btn-dark me-2" onClick={()=>goster("Giriş")}>Giriş</button>
   <button type="button" className="btn btn-primary"onClick={()=>goster("kayit")}>Kayıt Ol</button>
 </div>
-<div className="text-end">
+ 
+<div >
             <button 
                     id="logout_Btn" 
                     type="button" 
@@ -35,7 +37,10 @@ function Header(props)
                     >
                       Çıkış
                       </button>
+                 
           </div>
+       
+        
 </header>
 </div>
         </div>

@@ -23,19 +23,28 @@ export function goster(eleman) {
 
     if (eleman == "Erasmus Başvuru") {
         document.getElementById("header").style.display = "none";
-        document.getElementById("icerik").style.display = "none"
+        document.getElementById("icerik").style.display = "none";
+        var kullanici = sessionStorage.getItem("user");
+        kullanici = kullanici.split(",");
 
         sidebar.render(
-            <Sidebar />
+            <Sidebar
+                kullaniciadi={"Kullanıcı: " + kullanici[0]} />
         )
         portalicerik.render(
             <Basvuru />
         )
 
     }
+
     if (eleman == "Başvuru Yap") {
         var isLogin = sessionStorage.getItem("isLogin");
         if (isLogin == "true") {
+            document.getElementById("header").style.display = "none";
+            document.getElementById("icerik").style.display = "none";
+            sidebar.render(
+                <Sidebar />
+            )
             portalicerik.render(
                 <Basvuru />
             )
@@ -56,8 +65,7 @@ export function goster(eleman) {
         if (isLogin == "true") {
             sidebar.render();
             portalicerik.render();
-            var kullanici = sessionStorage.getItem("user");
-            kullanici = kullanici.split(",");
+         
             document.getElementById("header").style = ""
             document.getElementById("icerik").style = ""
             icerik.render(
@@ -134,14 +142,14 @@ export function goster(eleman) {
         var bolum = sessionStorage.getItem("bolum");
         var ortalama = sessionStorage.getItem("ortalama");
         var sinif = sessionStorage.getItem("sinif");
-        var belge = [sessionStorage.getItem("belge1"),sessionStorage.getItem("belge2"),sessionStorage.getItem("belge3"),sessionStorage.getItem("belge4"),sessionStorage.getItem("belge5"),sessionStorage.getItem("belge6")];
+        var belge = [sessionStorage.getItem("belge1"), sessionStorage.getItem("belge2"), sessionStorage.getItem("belge3"), sessionStorage.getItem("belge4"), sessionStorage.getItem("belge5"), sessionStorage.getItem("belge6")];
         var ulke = sessionStorage.getItem("ulke");
         var il = sessionStorage.getItem("il");
         var ilce = sessionStorage.getItem("ilce");
         var mahalle = sessionStorage.getItem("mahalle");
         var tel = sessionStorage.getItem("tel");
 
-        const onizlenenler = [isim, soyisim, email, dtarih, uyruk, id,uyruk2, id2,uyruk3
+        const onizlenenler = [isim, soyisim, email, dtarih, uyruk, id, uyruk2, id2, uyruk3
             , id3, engelbilgisi, universite, bolum
             , ortalama, sinif, belge, ulke, il, ilce, mahalle, tel];
         //  sessionStorage.getItem("belge2"),sessionStorage.getItem("belge3"),
@@ -151,22 +159,22 @@ export function goster(eleman) {
 
         portalicerik.render(
             <div className="p-1">
-            <ul className="list-group-item.disabled " style={{fontFamily:"cursive", fontSize:"10px"}}>
-              {onizleme.map((bilgi, bilgi_index) =>
-              (
-                <Onizleme
-                baslik={bilgi}
-                icerik={onizlenenler[bilgi_index]}
-                />
-              ))}
-      
-            </ul>
+                <ul className="list-group-item.disabled " style={{ fontFamily: "cursive", fontSize: "10px" }}>
+                    {onizleme.map((bilgi, bilgi_index) =>
+                    (
+                        <Onizleme
+                            baslik={bilgi}
+                            icerik={onizlenenler[bilgi_index]}
+                        />
+                    ))}
+
+                </ul>
             </div>
-          )
-      
-        }
-   
-    
+        )
+
+    }
+
+
 
 
     else if (eleman == "kayit") {
@@ -256,6 +264,13 @@ export function giris() {
     }
 
 }
+export  function cikis2() {
+
+window.location.reload()
+
+}
+
+
 export function cikis() {
 
     var isLogin = sessionStorage.getItem("isLogin");

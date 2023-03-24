@@ -21,6 +21,7 @@ root.render(
         <div id="sol" className="col-2"></div>
       </div>
     </div>
+    <div id="portal">
     <div class="row  ">
       <div className='col-3' id="sidebar">      
       </div>
@@ -29,6 +30,7 @@ root.render(
 
       
       <div className='col-1'></div>
+    </div>
     </div>
     <div className='row' id="footer" style={{ fontFamily: "fantasy", fontSize: "20px" }}>
       <footer class="py-3 my-4">
