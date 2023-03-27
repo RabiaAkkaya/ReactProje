@@ -26,9 +26,13 @@ function Header(props)
   <button type="button" className="btn btn-dark me-2" onClick={()=>goster("Giriş")}>Giriş</button>
   <button type="button" className="btn btn-primary"onClick={()=>goster("kayit")}>Kayıt Ol</button>
 </div>
- 
-<div >
-            <button 
+
+<div class="row">
+  <div class="col-6"><h6 id="header_karsilama"></h6></div>
+  <div class="col-1"></div>
+  <div class="col-5">
+
+  <button 
                     id="logout_Btn" 
                     type="button" 
                     className="btn btn-danger" 
@@ -37,9 +41,8 @@ function Header(props)
                     >
                       Çıkış
                       </button>
-                 
-          </div>
-       
+</div>
+</div>      
         
 </header>
 </div>

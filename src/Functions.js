@@ -12,23 +12,22 @@ import Iletisim from "./Sayfalar/Iletisim";
 import Sidebar from "./Sayfalar/SidebarPortal";
 import { onizleme } from "./Sayfalar/diziler"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SifreDegistir from "./Sayfalar/SifreDegistir";
 
-
-
-const icerik = ReactDOM.createRoot(document.getElementById('icerik'));
-const portalicerik = ReactDOM.createRoot(document.getElementById('portalicerik'));
-const sidebar = ReactDOM.createRoot(document.getElementById('sidebar'));
-const header = ReactDOM.createRoot(document.getElementById('header'));
 
 
 export function goster(eleman) {
+    const icerik = ReactDOM.createRoot(document.getElementById('icerik'));
+    const portalicerik = ReactDOM.createRoot(document.getElementById('portalicerik'));
+    const sidebar = ReactDOM.createRoot(document.getElementById('sidebar'));
+    const header = ReactDOM.createRoot(document.getElementById('header'));
 
     if (eleman == "Erasmus Başvuru") {
-        document.getElementById("header").style.display = "none";
-        document.getElementById("icerik").style.display = "none";
+
         var kullanici = sessionStorage.getItem("user");
         kullanici = kullanici.split(",");
-
+        document.getElementById("header").style.display = "none";
+        document.getElementById("icerik").style.display = "none";
         sidebar.render(
             <Sidebar
                 kullaniciadi={"Kullanıcı: " + kullanici[0]} />
@@ -54,6 +53,49 @@ export function goster(eleman) {
         else
             alert("Lütfen giriş yapınız!");
     }
+    else if (eleman == "Şifre Değiştir") {
+
+        icerik.render(
+            <SifreDegistir />
+        )
+    }
+
+    else if (eleman == "Yeni Parola Al") {
+        var mail = document.getElementById("email").value;
+        var sifre = document.getElementById("password").value;
+        var user2 = [mail, sifre];
+        var kullanici = sessionStorage.getItem("user");
+
+        if (kullanici == user2) {
+            document.getElementById("kul_bilgiler").style.display = "none";
+            document.getElementById("sifreDegis").style.display = "";
+        }
+        else
+            document.getElementById("sonuc").innerHTML = "Kullanıcı bulunamadı!"
+
+
+    }
+
+    else if (eleman == "Tamamla") {
+        if (document.getElementById("password1").value == document.getElementById("password2").value
+            && document.getElementById("password2").value != "") {
+            var kullanici = sessionStorage.getItem("user");
+            kullanici = kullanici.split(",");
+            var yeni_kullanici = [kullanici[0], document.getElementById("password1").value];
+            sessionStorage.setItem("user", "");
+            sessionStorage.setItem("user", yeni_kullanici);
+            document.getElementById("sonuc1").style.color = "green";
+            document.getElementById("sonuc1").innerHTML = "Şifre başarıyla değiştirildi!"
+
+            setTimeout(() => {
+                icerik.render(
+                    <Giris />
+                )
+            }, 1000);
+        }
+        else
+            document.getElementById("sonuc1").innerHTML = "Tekrar deneyiniz!"
+    }
     else if (eleman == "KHAS Anasayfa") {
 
         icerik.render(
@@ -67,7 +109,7 @@ export function goster(eleman) {
         if (isLogin == "true") {
             sidebar.render();
             portalicerik.render();
-         
+
             document.getElementById("header").style = ""
             document.getElementById("icerik").style = ""
             icerik.render(
@@ -154,28 +196,38 @@ export function goster(eleman) {
         const onizlenenler = [isim, soyisim, email, dtarih, uyruk, id, uyruk2, id2, uyruk3
             , id3, engelbilgisi, universite, bolum
             , ortalama, sinif, belge, ulke, il, ilce, mahalle, tel];
+onizlenenler.map((eleman,index)=>
+{
+   if(onizlenenler[index]=="")
+   {
+    onizlenenler[index]="null";
+   }
+});      
         //  sessionStorage.getItem("belge2"),sessionStorage.getItem("belge3"),
         //  sessionStorage.getItem("belge4"), sessionStorage.getItem("belge5"), sessionStorage.getItem("belge6"),
         const icerik = ReactDOM.createRoot(document.getElementById('portalicerik'));
 
+       
+        if (onizlenenler[3]!=null) {
+            portalicerik.render(
+                <div className="p-1">
+                    <ul className="list-group-item.disabled " style={{ fontFamily: "cursive", fontSize: "14px" }}>
+                        {onizleme.map((bilgi, bilgi_index) =>
+                        ( 
+                            <Onizleme
+                                baslik={bilgi}
+                                icerik={onizlenenler[bilgi_index]}
+                            />
+                        ))}
 
-        portalicerik.render(
-            <div className="p-1">
-                <ul className="list-group-item.disabled " style={{ fontFamily: "cursive", fontSize: "10px" }}>
-                    {onizleme.map((bilgi, bilgi_index) =>
-                    (
-                        <Onizleme
-                            baslik={bilgi}
-                            icerik={onizlenenler[bilgi_index]}
-                        />
-                    ))}
+                    </ul>
+                </div>
+            )
 
-                </ul>
-            </div>
-        )
-
+        }
+        else
+            alert("Lütfen başvuru formunu doldurunuz!");
     }
-
 
 
 
@@ -220,7 +272,7 @@ export function kayit() {
 
 }
 export function giris() {
-
+    const icerik = ReactDOM.createRoot(document.getElementById('icerik'));
     var kullanici = sessionStorage.getItem("user");
 
     if (kullanici == null) {
@@ -262,9 +314,9 @@ export function giris() {
     }
 
 }
-export  function cikis2() {
+export function cikis2() {
 
-window.location.reload()
+    window.location.reload()
 
 }
 
@@ -390,16 +442,7 @@ export function basvuru3() {
     else {
         document.getElementById("uyari").innerHTML = "Lütfen tüm alanları doldurunuz!";
     }
-    
+
 }
-export function sifreDegistir()
-{ 
-    var isLogin=sessionStorage.getItem("isLogin");
-    if(isLogin=="true")
-    {
-    
-    }
-    else{
-        alert("Lütfen ilk önce giriş yapınız!")
-    }
+export function sifreDegistir() {
 }

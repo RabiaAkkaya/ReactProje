@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from "../Image/images.png";
-import { giris } from '../Functions';
+import { giris,goster } from '../Functions';
 function Giris() {
     return (
 
@@ -28,8 +28,8 @@ function Giris() {
                             <div class="col-12">
                                 <button type="button" class="btn btn-info" onClick={()=>giris()}>Giriş</button><br></br>
                                 <p id="sonuc"></p>
-                                <button type="button" class="btn btn-link">Şifre Değiştir</button><br></br>
-                                <button type="button" class="btn btn-link">Kayıt Ol</button>
+                                <button type="button" class="btn btn-link"onClick={()=>goster("Şifre Değiştir")}>Şifre Değiştir</button><br></br>
+                                <button type="button" class="btn btn-link" onClick={()=>goster("kayit")}>Kayıt Ol</button>
 
                             </div>
                         </div>

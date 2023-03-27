@@ -2,11 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import Header from './Header';
-import Sidebar from 'react-sidebar';
 import Home from './Sayfalar/Home';
 import bg from './Image/redes.jpg';
-import SidebarPortal from './Sayfalar/SidebarPortal';
-import Basvuru2 from './Sayfalar/Basvuru2';
+import { goster } from './Functions';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -35,9 +34,9 @@ root.render(
     <div className='row' id="footer" style={{ fontFamily: "fantasy", fontSize: "20px" }}>
       <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item m-2"><a href="index.html" class="nav-link px-2 text-muted"><font style={{ vertical: "inherit" }}><font style={{ vertical: "inherit" }}>Kayıt  </font></font></a></li>
-          <li class="nav-item m-2"><a href="login.html" class="nav-link px-2 text-muted"><font style={{ vertical: "inherit" }}><font style={{ vertical: "inherit" }}>Giriş  </font></font></a></li>
-          <li class="nav-item m-2"><a href="erasmusHakkinda.html" class="nav-link px-2 text-muted"><font style={{ vertical: "inherit" }}><font style={{ vertical: "inherit" }}>Erasmus Hakkında  </font></font></a></li>
+          <li class="nav-item m-2" onClick={()=>goster("kayit")}><a class="nav-link px-2 text-muted"><font style={{ vertical: "inherit" }}><font style={{ vertical: "inherit" }}>Kayıt</font></font></a></li>
+          <li class="nav-item m-2" onClick={()=>goster("Giriş")}><a class="nav-link px-2 text-muted"><font style={{ vertical: "inherit" }}><font style={{ vertical: "inherit" }}>Giriş</font></font></a></li>
+          <li class="nav-item m-2"  onClick={()=>goster("Erasmus Hakkında")}><a class="nav-link px-2 text-muted"><font style={{ vertical: "inherit" }}><font style={{ vertical: "inherit" }}>Erasmus Hakkında  </font></font></a></li>
 
         </ul>
         <p class="text-center text-muted"><font style={{ vertical: "inherit" }}><font style={{ vertical: "inherit" }}>© 2023 Kadir Has Universitesi</font></font></p>

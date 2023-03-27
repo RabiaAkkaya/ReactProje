@@ -22,13 +22,16 @@ function Basvuru3() {
                     <label class="mb-2">Telefon Numarası:</label>
                     <input type="text" class="form-control py-2 mb-4" id="tel" placeholder="(5XX)-XXX-XX-XX" />
 
+                
                 </div>
                 <div class="row mt-4 mb-2 ">
-              
-                          <div class="col-1"></div>
+                
+                          
                           <div class="col-3"style={{width:"100px",height:"100px", backgroundImage:`url(${buttonleft})`}} onClick={()=>goster("Basvuru2")}></div>
-                          <div class="col-4"></div>                            
-                          <div class="col-3" style={{width:"100px",height:"100px", backgroundImage:`url(${buttonright})`}} onClick={()=>basvuru3()}></div>
+                          <div class="col-1"></div>
+                          <div class="col-8">  <button type="button" class="btn btn-dark mt-4"  onClick={()=>basvuru3()}>Başvuruyu Tamamla</button> </div> 
+                                 
+
                           </div>
                       </div>
 

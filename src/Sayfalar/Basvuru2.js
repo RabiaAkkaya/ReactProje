@@ -63,9 +63,7 @@ function Basvuru2() {
                             <div class="row mt-2 ">
                                 <div class="col-4"></div>
                                 <div class="col-8">
-                                <div class="col-12"><p id="uyari" style={{ color: "red" }}></p></div>
-                                    <button type="button" class="btn btn-dark mx-4" onclick="TipKontrol()">Dosyaları Yükle</button>
-                                    
+                                <div class="col-12"><p id="uyari" style={{ color: "red" }}></p></div>                                                          
                                 </div>
 
                             </div>
