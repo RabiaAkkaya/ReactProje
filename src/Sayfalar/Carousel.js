@@ -21,7 +21,7 @@ function Carousel() {
 
     return (
         <div>
-          <img class="pt-2"src={images[currentImageIndex]} alt="resim" style={{width:"800px",height:"500px"}} />
+          <img class="pt-2"src={images[currentImageIndex]} alt="resim" style={{width:"90%",height:"500px"}} />
         </div>
       );
 

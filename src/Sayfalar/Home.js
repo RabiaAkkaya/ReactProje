@@ -15,7 +15,7 @@ const Home = () => {
    <Carousel/>
       <div className="row  mt-3 mb-5 pb-3 pt-5" >
         <div className="col-4 d-flex justify-content-center">
-          <div class="card" style={{ width: " 18rem" }}>
+          <div class="card" style={{ width:"70%" }}>
             <img src={helsinki} class="card-img-top" alt="..." />
             <div class="card-body">
               <p class="card-text">Helsinki Metropolia University of Applied Sciences (Finlandiya)</p>
@@ -24,7 +24,7 @@ const Home = () => {
           </div>
         </div>
         <div className="col-4 d-flex justify-content-center ">
-          <div class="card" style={{ width: " 18rem" }}>
+          <div class="card" style={{ width:"70%" }}>
             <img src={TrinityCollage} class="card-img-top" alt="..." />
             <div class="card-body">
               <p class="card-text">Trinity College Dublin (İrlanda)</p>
@@ -36,7 +36,7 @@ const Home = () => {
       
         </div>
         <div className="col-4 d-flex justify-content-center">
-          <div class="card" style={{ width: " 18rem" }}>
+          <div class="card" style={{ width: "70%" }}>
             <img src={Georgia} class="card-img-top" alt="..." />
             <div class="card-body">
               <p class="card-text">(Georgia State University)</p>
